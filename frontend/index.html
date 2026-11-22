@@ -1,0 +1,31 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dr.Mail – Intelligent Email Spam Classifier</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css"></head><body>
+<header class="nav"><a class="logo" href="#home">DR.<span>MAIL</span></a>
+<button id="menu" class="btn sm" aria-label="Menu">☰</button>
+<nav id="links"><a href="#home">Home</a><a href="#analyze">Analyzer</a><a href="#insights">Insights</a><a href="#history">History</a></nav></header>
+<main>
+<section id="home" class="hero"><div class="shape s1"></div><div class="shape s2"></div>
+<h1>Your Inbox.<br><mark>Your Rules.</mark></h1>
+<p class="lead">Dr.Mail classifies emails as spam or legitimate using a TF-IDF + Multinomial Naive Bayes model trained on the Apache SpamAssassin corpus.</p>
+<a class="btn big" href="#analyze">Analyze an Email →</a>
+<div class="stats" id="stats"><div class="card">Loading stats…</div></div></section>
+<section class="grid3"><div class="card pink"><h3>SPAM</h3><p>Unsolicited, often deceptive mail: fake prizes, phishing links, pushy offers.</p></div>
+<div class="card lime"><h3>HAM</h3><p>Legitimate mail: colleagues, receipts, newsletters you asked for.</p></div>
+<div class="card blue"><h3>THE TECH</h3><p>Python, scikit-learn, Flask and Joblib. Real model, real API, no keyword rules.</p></div></section>
+<section id="analyze"><h2>Email Analyzer</h2><div class="card">
+<textarea id="msg" rows="9" maxlength="50000" placeholder="Subject: Congratulations! You've WON $1,000,000&#10;&#10;Click http://claim-now.example to receive your free prize today!"></textarea>
+<div class="row"><span id="count">0 / 50000</span><div><button id="clear" class="btn alt">Clear</button> <button id="go" class="btn">Analyze</button></div></div>
+<p id="err" class="err" role="alert" hidden></p><div id="loader" class="loader" hidden>Analyzing…</div></div>
+<div id="result" class="card" hidden></div></section>
+<section id="insights"><h2>Model Insights</h2><div class="grid3">
+<div class="card"><h3>TF-IDF</h3><p>Turns text into numbers: words (and word pairs) weighted by how often they appear in a message versus across all messages.</p></div>
+<div class="card"><h3>Naive Bayes</h3><p>Learns how likely each term is in spam vs. ham, then combines those likelihoods with Bayes' rule, assuming terms are independent.</p></div>
+<div class="card"><h3>Predicting</h3><p>Your email is vectorized with the saved vectorizer, and the model returns estimated class probabilities.</p></div></div>
+<div class="card" id="metrics">Loading metrics…</div></section>
+<section id="history"><h2>Prediction History</h2><div class="card">
+<p class="small">Stored only in this browser (localStorage). Just a 60-character preview is kept, never the full email, and nothing is saved on the server.</p>
+<ul id="hlist"></ul><button id="hclear" class="btn alt">Clear history</button></div></section></main>
+<footer>Dr.Mail · ML predictions can be wrong and never guarantee an email is safe.</footer>
+<script src="js/app.js"></script></body></html>

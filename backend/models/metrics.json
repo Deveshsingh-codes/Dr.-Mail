@@ -1,0 +1,35 @@
+{
+  "accuracy": 0.96964586846543,
+  "precision": 0.9625468164794008,
+  "recall": 0.969811320754717,
+  "f1": 0.9661654135338346,
+  "confusion_matrix": [
+    [
+      318,
+      10
+    ],
+    [
+      8,
+      257
+    ]
+  ],
+  "report": "              precision    recall  f1-score   support\n\n         ham       0.98      0.97      0.97       328\n        spam       0.96      0.97      0.97       265\n\n    accuracy                           0.97       593\n   macro avg       0.97      0.97      0.97       593\nweighted avg       0.97      0.97      0.97       593\n",
+  "dataset": {
+    "name": "Apache SpamAssassin Public Corpus",
+    "source": "https://spamassassin.apache.org/old/publiccorpus/",
+    "files": [
+      "20030228_easy_ham_2.tar.bz2",
+      "20030228_hard_ham.tar.bz2",
+      "20030228_spam_2.tar.bz2",
+      "20050311_spam_2.tar.bz2"
+    ],
+    "raw_messages": 4443,
+    "after_cleaning": 2964,
+    "spam": 1325,
+    "ham": 1639,
+    "train_size": 2371,
+    "test_size": 593
+  },
+  "model": "TfidfVectorizer + MultinomialNB",
+  "trained_at": "2026-11-22T04:30:37.659653+00:00"
+}
